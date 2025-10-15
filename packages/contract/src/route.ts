@@ -1,5 +1,5 @@
 import type { HTTPMethod, HTTPPath } from '@orpc/client'
-import type { OpenAPI } from './types'
+import type { OpenAPI, OpenAPIV3 } from './types'
 
 export type InputStructure = 'compact' | 'detailed'
 export type OutputStructure = 'compact' | 'detailed'
@@ -136,6 +136,13 @@ export interface Route {
    * @see {@link https://orpc.unnoq.com/docs/openapi/openapi-specification#operation-metadata Operation Metadata Docs}
    */
   spec?: OpenAPI.OperationObject | ((current: OpenAPI.OperationObject) => OpenAPI.OperationObject)
+
+  /**
+   * Override entire auto-generated OpenAPI Operation Object Specification.
+   *
+   * @see {@link https://orpc.unnoq.com/docs/openapi/openapi-specification#operation-metadata Operation Metadata Docs}
+   */
+  specv3?: OpenAPIV3.OperationObject | ((current: OpenAPIV3.OperationObject) => OpenAPIV3.OperationObject)
 }
 
 export function mergeRoute(a: Route, b: Route): Route {

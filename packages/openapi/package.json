@@ -64,6 +64,7 @@
     "type:check": "tsc -b"
   },
   "dependencies": {
+    "@openapi-contrib/json-schema-to-openapi-schema": "^4.2.0",
     "@orpc/client": "workspace:*",
     "@orpc/contract": "workspace:*",
     "@orpc/interop": "workspace:*",

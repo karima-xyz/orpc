@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx --watch src/main.ts",
     "start": "tsx src/main.ts",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc --noEmit",
+    "gen:spec": "tsx ./scripts/generateSpec.ts"
   },
   "devDependencies": {
     "@orpc/client": "next",
